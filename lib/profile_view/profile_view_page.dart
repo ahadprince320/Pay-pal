@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:pay_pal/Navigation_bar/bottom_navigation_bar.dart';
 import 'package:pay_pal/controller/image_controller.dart';
 import 'package:pay_pal/style/app_bar/custrom_appBar.dart';
 
@@ -27,7 +28,9 @@ class _ProfileViewState extends State<ProfileView> {
           physics: BouncingScrollPhysics(),
           child: Column(
             children: [
-              Center(child: GetBuilder<ProfileSetupController>(
+              Center
+                (
+                  child: GetBuilder<ProfileSetupController>(
                 builder: (controller) {
                   return Stack(
                     alignment: Alignment.bottomRight,
@@ -61,7 +64,8 @@ class _ProfileViewState extends State<ProfileView> {
                     ],
                   );
                 },
-              )),
+              )
+              ),
               SizedBox(
                 height: 55,
               ),
@@ -89,7 +93,9 @@ class _ProfileViewState extends State<ProfileView> {
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
                     CustromButtom(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.push(context, MaterialPageRoute(builder: (context) => NavBar(),));
+                      },
                       name: 'Computer Setup',
                     ),
                   ],

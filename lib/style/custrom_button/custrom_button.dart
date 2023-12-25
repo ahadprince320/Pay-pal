@@ -1,8 +1,9 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class CustromButtom extends StatelessWidget {
   final String? name;
-  final void Function()?onPressed;
+  final void Function()? onPressed;
   const CustromButtom({super.key, this.name, this.onPressed});
 
   @override
@@ -11,15 +12,9 @@ class CustromButtom extends StatelessWidget {
       width: double.infinity,
       height: 50,
       child: ElevatedButton(
-        onPressed: onPressed,
-        child: Text(name!,
-            style: TextStyle(
-                color: Colors.white,
-                fontSize: 19.0,
-                fontWeight: FontWeight.bold)),
-        style: ElevatedButton.styleFrom(
-          backgroundColor: Colors.blue,
-        ),
+        style: ElevatedButton.styleFrom(backgroundColor: CupertinoColors.activeBlue),
+        onPressed: onPressed, child: Text(name!,style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold,fontSize: 24)),
+
       ),
     );
   }
